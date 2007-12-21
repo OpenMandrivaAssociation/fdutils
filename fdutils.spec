@@ -12,6 +12,7 @@ License:	GPL
 Group:		System/Kernel and hardware
 ExclusiveOS:	Linux
 BuildRequires:	flex tetex-latex texinfo e2fsprogs-devel
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 This package contains utilities for configuring and debugging the
