@@ -1,0 +1,11 @@
+--- fdutils-5.4/src/fdmount.c~	2004-04-17 13:44:16.497905142 +0200
++++ fdutils-5.4/src/fdmount.c	2004-04-17 13:45:02.448596169 +0200
+@@ -22,7 +22,7 @@
+ #include <linux/ext_fs.h>
+ #endif
+ 
+-#include <linux/ext2_fs.h>
++#include <ext2fs/ext2_fs.h>
+ 
+ #ifdef HAVE_LINUX_XIA_FS_H
+ #include <linux/xia_fs.h>

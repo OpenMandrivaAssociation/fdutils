@@ -1,0 +1,83 @@
+--- fdutils-5.4/src/Makefile.in.fpons	2003-10-14 16:52:57.000000000 +0200
++++ fdutils-5.4/src/Makefile.in	2003-10-14 16:55:06.000000000 +0200
+@@ -123,20 +123,20 @@
+ 
+ install-bin: all
+ 	$(top_srcdir)/mkinstalldirs $(bindir)
+-	$(INSTALL) -c -m $(PERM) -o $(UID) -g $(GID) $(srcdir)/MAKEFLOPPIES $(bindir)
+-	$(INSTALL) -c -s -m $(PERM) -o $(UID) -g $(GID) diskd $(bindir)
+-	$(INSTALL) -c -s -m $(PERM) -o $(UID) -g $(GID) diskseekd $(bindir)
+-	$(INSTALL) -c -s -m $(PERM) -o $(UID) -g $(GID) floppycontrol $(bindir)
+-	$(INSTALL) -c -s -m $(PERM) -o $(UID) -g $(GID) floppymeter $(bindir)
+-	$(INSTALL) -c -s -m $(PERM) -o $(UID) -g $(GID) getfdprm $(bindir)
+-	$(INSTALL) -c -s -m $(PERM) -o $(UID) -g $(GID) setfdprm $(bindir)
+-	$(INSTALL) -c -s -m $(PERM) -o $(UID) -g $(GID) fdrawcmd $(bindir)
+-	$(INSTALL) -c -s -m $(PERM) -o $(UID) -g $(GID) superformat $(bindir)
+-	$(INSTALL) -c -s -m $(PERM) -o $(UID) -g $(GID) xdfcopy $(bindir)
+-	$(INSTALL) -c -s -m $(SPERM) -o $(UID) -g $(GID) fdmount $(bindir)
+-	$(INSTALL) -c -s -m $(SPERM) -o $(UID) -g $(GID) fdmount $(bindir)/fdumount
++	$(INSTALL) -c -m $(PERM) $(srcdir)/MAKEFLOPPIES $(bindir)
++	$(INSTALL) -c -s -m $(PERM) diskd $(bindir)
++	$(INSTALL) -c -s -m $(PERM) diskseekd $(bindir)
++	$(INSTALL) -c -s -m $(PERM) floppycontrol $(bindir)
++	$(INSTALL) -c -s -m $(PERM) floppymeter $(bindir)
++	$(INSTALL) -c -s -m $(PERM) getfdprm $(bindir)
++	$(INSTALL) -c -s -m $(PERM) setfdprm $(bindir)
++	$(INSTALL) -c -s -m $(PERM) fdrawcmd $(bindir)
++	$(INSTALL) -c -s -m $(PERM) superformat $(bindir)
++	$(INSTALL) -c -s -m $(PERM) xdfcopy $(bindir)
++	$(INSTALL) -c -s -m $(SPERM) fdmount $(bindir)
++	$(INSTALL) -c -s -m $(SPERM) fdmount $(bindir)/fdumount
+ 	( cd $(bindir); \
+-	ln -sf xdfcopy $(bindir)/xdfformat; \
+-	ln -sf fdmount $(bindir)/fdumount; \
+-	ln -sf fdmount $(bindir)/fdlist; \
+-	ln -sf fdmount $(bindir)/fdmountd )
++	ln xdfcopy $(bindir)/xdfformat; \
++	ln fdmount $(bindir)/fdumount; \
++	ln fdmount $(bindir)/fdlist; \
++	ln fdmount $(bindir)/fdmountd )
+--- fdutils-5.4/doc/Makefile.in.fpons	2003-10-14 16:51:55.000000000 +0200
++++ fdutils-5.4/doc/Makefile.in	2003-10-14 16:52:28.000000000 +0200
+@@ -105,17 +105,17 @@
+ 	$(top_srcdir)/mkinstalldirs $(mandir4)
+ 	$(top_srcdir)/mkinstalldirs $(mandir8)
+ 	for i in $(MANPAGES1); do \
+-		install -c -m $(MANPERM) -o $(UID) -g $(GID) \
++		install -c -m $(MANPERM) \
+ 			$(srcdir)/$$i $(mandir1)/$$i; \
+ 	done
+ 
+ 	for i in $(MANPAGES4); do \
+-		install -c -m $(MANPERM) -o $(UID) -g $(GID) \
++		install -c -m $(MANPERM) \
+ 			$(srcdir)/$$i $(mandir4)/$$i; \
+ 	done
+ 
+ #	for i in $(MANPAGES8); do \
+-#		install -c -m $(MANPERM) -o $(UID) -g $(GID) \
++#		install -c -m $(MANPERM) \
+ #			$(srcdir)/$$i $(mandir8)/$$i; \
+ #	done
+ 
+@@ -129,17 +129,17 @@
+ install-zman:
+ 	for i in $(MANPAGES1); do \
+ 		gzip < $(srcdir)/$$i >_; \
+-		install -c -m $(MANPERM) -o $(UID) -g $(GID) \
++		install -c -m $(MANPERM) \
+ 			_ $(mandir1)/$$i.gz; \
+ 	done
+ 	for i in $(MANPAGES4); do \
+ 		gzip < $(srcdir)/$$i >_; \
+-		install -c -m $(MANPERM) -o $(UID) -g $(GID) \
++		install -c -m $(MANPERM) \
+ 			_ $(mandir4)/$$i.gz; \
+ 	done
+ 	for i in $(MANPAGES8); do \
+ 		gzip < $(srcdir)/$$i >_; \
+-		install -c -m $(MANPERM) -o $(UID) -g $(GID) \
++		install -c -m $(MANPERM) \
+ 			_ $(mandir8)/$$i.gz; \
+ 	done
+ 	rm _
