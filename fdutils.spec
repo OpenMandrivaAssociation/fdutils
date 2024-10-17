@@ -2,7 +2,7 @@ Summary:	Programs for dealing with floppy disks
 Name:		fdutils
 Version:	5.5
 Release:	%mkrel 7
-URL:		http://fdutils.linux.lu/
+URL:		https://fdutils.linux.lu/
 Source0:	http://fdutils.linux.lu/%{name}-%{version}.tar.bz2
 #Patch0:		fdutils-5.4-20030718.diff
 Patch1:		fdutils-manpages.patch
