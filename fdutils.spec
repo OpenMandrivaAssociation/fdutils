@@ -11,6 +11,11 @@ Patch3:		fdutils-5.4-linux2.6-buildfix.patch
 License:	GPL
 Group:		System/Kernel and hardware
 ExclusiveOS:	Linux
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	flex tetex-latex texinfo e2fsprogs-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
